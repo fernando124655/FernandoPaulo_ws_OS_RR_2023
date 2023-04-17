@@ -1,0 +1,7 @@
+O propósito deste software é realizar o cálculo dos números Fibonacci de maneira simultânea através de threads na linguagem Rust. O cálculo é segmentado em "pedaços" denominados de "chunks", os quais são executados de forma paralela em threads independentes. A constante CHUNK_SIZE define o tamanho de cada "chunk", enquanto a constante MAX_IDX define o maior índice a ser calculado.
+
+O loop principal do programa itera sobre os "chunks" de índices a serem calculados. Para cada "chunk", um novo thread é criado, calculando e exibindo na tela os números Fibonacci correspondentes. O vetor handles armazena os identificadores das threads criadas.
+
+Depois de gerar todas as threads, o programa espera até que cada uma delas seja concluída através do loop for final, o qual utiliza o método join() para cada identificador de thread armazenado no vetor handles.
+
+A função fibonacci() é responsável por implementar o cálculo recursivo dos números Fibonacci, recebendo como entrada um índice n e retornando o número Fibonacci correspondente. A função emprega uma expressão match para avaliar o valor de n e retornar o valor correto conforme as condições definidas.
